@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="92dp"
+    android:minHeight="92dp"
     android:background="#222222"
     android:backgroundTint="#222222">
     
@@ -25,7 +26,7 @@
         android:layout_alignStart="@id/app_icon"
         android:layout_marginTop="-2dp"
         android:layout_marginLeft="-2dp"
-        android:src="@drawable/tagNew"
+        android:src="@drawable/tag_new"
         android:tint="#1D9BF6"/>
 
     <RelativeLayout
@@ -54,7 +55,7 @@
             android:layout_toEndOf="@id/app_title"
             android:layout_marginLeft="3dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/tagHot"
+            android:src="@drawable/tag_hot"
             android:tint="#FC2125"/>
     </RelativeLayout>
 
@@ -119,11 +120,5 @@
         android:src="@drawable/ikons_youtube"
         android:tint="#73FA79"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_alignParentBottom="true"
-        android:background="#666666"
-        android:backgroundTint="#666666"/>
 
 </RelativeLayout>
