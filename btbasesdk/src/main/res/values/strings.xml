@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BTBaseSDK</string>
+    <string name="gamewall_activity_title">Game Wall</string>
 </resources>

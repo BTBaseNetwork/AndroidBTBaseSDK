@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="92dp"
-    android:minHeight="92dp"
+    android:layout_height="wrap_content"
     android:background="#222222"
     android:backgroundTint="#222222">
     
     <ImageView
         android:id="@+id/app_icon"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="8dp"
-        android:src="@drawable/ikons_grid_2"
-        android:tint="#73FA79"/>
+        android:layout_margin="8dp"
+        android:src="@drawable/ikons_grid_2"/>
 
 
     <ImageView
@@ -29,86 +27,75 @@
         android:src="@drawable/tag_new"
         android:tint="#1D9BF6"/>
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/app_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_alignTop="@id/app_icon"
-        android:layout_toEndOf="@id/app_icon"
         android:layout_toRightOf="@id/app_icon"
+        android:layout_alignTop="@id/app_icon"
+        android:text="@string/app_name"
+        android:textSize="8pt"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
 
-        android:layout_margin="2dp">
-        <TextView
-            android:id="@+id/app_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="8pt"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"/>
-
-        <ImageView
-            android:id="@+id/hot_label"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:layout_toRightOf="@id/app_title"
-            android:layout_toEndOf="@id/app_title"
-            android:layout_marginLeft="3dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/tag_hot"
-            android:tint="#FC2125"/>
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/hot_label"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_toRightOf="@id/app_title"
+        android:layout_toEndOf="@id/app_title"
+        android:layout_alignTop="@id/app_title"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/tag_hot"
+        android:tint="#FC2125"/>
 
     <ImageView
         android:id="@+id/app_star_0"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:src="@drawable/ikons_star"
         android:tint="#FEB406"
         android:layout_alignBottom="@id/app_icon"
         android:layout_toRightOf="@id/app_icon"
         android:layout_toEndOf="@id/app_icon"
-        android:layout_margin="2dp"/>
+        android:layout_marginBottom="4dp"/>
     <ImageView
         android:id="@+id/app_star_1"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:src="@drawable/ikons_star"
         android:tint="#FEB406"
-        android:layout_alignBottom="@id/app_icon"
+        android:layout_alignBottom="@id/app_star_0"
         android:layout_toRightOf="@id/app_star_0"
-        android:layout_toEndOf="@id/app_star_0"
-        android:layout_margin="2dp"/>
+        android:layout_toEndOf="@id/app_star_0"/>
     <ImageView
         android:id="@+id/app_star_2"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:src="@drawable/ikons_star"
         android:tint="#FEB406"
-        android:layout_alignBottom="@id/app_icon"
+        android:layout_alignBottom="@id/app_star_0"
         android:layout_toRightOf="@id/app_star_1"
-        android:layout_toEndOf="@id/app_star_1"
-        android:layout_margin="2dp"/>
+        android:layout_toEndOf="@id/app_star_1"/>
     <ImageView
         android:id="@+id/app_star_3"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:src="@drawable/ikons_star"
         android:tint="#FEB406"
-        android:layout_alignBottom="@id/app_icon"
+        android:layout_alignBottom="@id/app_star_0"
         android:layout_toRightOf="@id/app_star_2"
-        android:layout_toEndOf="@id/app_star_2"
-        android:layout_margin="2dp"/>
+        android:layout_toEndOf="@id/app_star_2"/>
     <ImageView
         android:id="@+id/app_star_4"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:src="@drawable/ikons_star"
         android:tint="#FEB406"
-        android:layout_alignBottom="@id/app_icon"
+        android:layout_alignBottom="@id/app_star_0"
         android:layout_toRightOf="@id/app_star_3"
-        android:layout_toEndOf="@id/app_star_3"
-        android:layout_margin="2dp"/>
+        android:layout_toEndOf="@id/app_star_3"/>
 
     <ImageView
         android:id="@+id/play_video_button"
@@ -118,7 +105,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="8dp"
         android:src="@drawable/ikons_youtube"
-        android:tint="#73FA79"/>
+        android:tint="@color/default_tint_color"/>
 
 
 </RelativeLayout>
