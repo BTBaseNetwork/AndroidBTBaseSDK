@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">BTBaseSDK</string>
     <string name="gamewall_activity_title">Game Wall</string>
+
+    <string name="title_activity_btgame_wall_video_fullscreen">BTGameWallVideoFullscreenActivity
+    </string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

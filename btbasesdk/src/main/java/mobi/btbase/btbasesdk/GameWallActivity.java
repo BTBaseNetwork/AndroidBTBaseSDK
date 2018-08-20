@@ -2,12 +2,13 @@ package mobi.btbase.btbasesdk;
 
 import android.content.Context;
 import android.content.Intent;
+import android.drm.DrmStore;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,15 +31,12 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.google.gson.Gson;
-
-import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-
 import mobi.btbase.btbasesdk.common.GlideRoundTransform;
 import mobi.btbase.btbasesdk.models.BTGameWallConfig;
 import mobi.btbase.btbasesdk.models.BTGameWallItem;
@@ -125,10 +123,10 @@ public class GameWallActivity extends AppCompatActivity {
                     Log.i("GameWallActivity", "On Click Play Video Button");
                     try {
                         String videoUrl = BTBaseSDK.getHttpProxyCacheServer().getProxyUrl(gameWallItem.getLocalizedString(mContext, "videoUrl", gameWallItem.videoUrl));
-                        Intent intent = new Intent(Intent.ACTION_VIEW);
-                        intent.setDataAndType(Uri.parse(videoUrl), "video/mp4");
+                        Intent intent = new Intent(Intent.ACTION_VIEW); //new Intent(mContext,FullscreenVideoActivity.class);
+                        intent.setDataAndType(Uri.parse(videoUrl),"video/*");
+                        intent.putExtra("title",mTitleText.getText());
                         startActivity(intent);
-
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -148,14 +146,20 @@ public class GameWallActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(JSONObject response) {
 
-                    BTGameWallConfig btGameWallConfig = new Gson().fromJson(response.toString(),BTGameWallConfig.class);
+                    BTGameWallConfig btGameWallConfig = new Gson().fromJson(response.toString(), BTGameWallConfig.class);
 
                     if (btGameWallConfig.configVersion > 0 && btGameWallConfig.items != null) {
                         mGamewallItems = Arrays.asList(btGameWallConfig.items);
+                        Collections.sort(mGamewallItems, new Comparator<BTGameWallItem>() {
+                            @Override
+                            public int compare(BTGameWallItem o1, BTGameWallItem o2) {
+                                return o2.priority - o1.priority;
+                            }
+                        });
                         try {
                             GameWallListAdapter.this.notifyDataSetChanged();
-                        }catch (Exception e){
-                            Log.e("GameWallListAdapter",e.toString());
+                        } catch (Exception e) {
+                            Log.e("GameWallListAdapter", e.toString());
                         }
                     }
 
@@ -163,7 +167,7 @@ public class GameWallActivity extends AppCompatActivity {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Log.e("GameWallListAdapter",error.toString());
+                    Log.e("GameWallListAdapter", error.toString());
                 }
             });
             requestQueue.add(jsonObjectRequest);

@@ -42,7 +42,7 @@ public class BTGameWallItem {
             locale = context.getResources().getConfiguration().locale;
         }
 
-        String locKey = String.format("%s-%s",locale.getCountry(),locale.getDisplayLanguage());
+        String locKey = String.format("%s_%s",locale.getCountry(),locale.getDisplayLanguage());
 
         if (loc != null && loc.containsKey(locKey))
         {

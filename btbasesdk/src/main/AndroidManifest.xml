@@ -2,9 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mobi.btbase.btbasesdk">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application>
-        <activity android:name=".GameWallActivity" android:label="@string/gamewall_activity_title"></activity>
+        <activity
+            android:name=".GameWallActivity"
+            android:label="@string/gamewall_activity_title" />
+        <activity android:name=".FullscreenVideoActivity"></activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
 </manifest>
