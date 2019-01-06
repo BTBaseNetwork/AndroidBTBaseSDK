@@ -7,9 +7,9 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="/Volumes/mac/Workspace/BTBaseNetwork/AndroidBTBaseSDK" />
-            <option value="/Volumes/mac/Workspace/BTBaseNetwork/AndroidBTBaseSDK/app" />
-            <option value="/Volumes/mac/Workspace/BTBaseNetwork/AndroidBTBaseSDK/btbasesdk" />
+            <option value="/Volumes/macWorkspace/Workspace/BTBaseNetwork/AndroidBTBaseSDK" />
+            <option value="/Volumes/macWorkspace/Workspace/BTBaseNetwork/AndroidBTBaseSDK/app" />
+            <option value="/Volumes/macWorkspace/Workspace/BTBaseNetwork/AndroidBTBaseSDK/btbasesdk" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
